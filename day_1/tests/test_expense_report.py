@@ -15,3 +15,8 @@ def test_add_nums(er):
     assert type(sum) is int
     assert sum == 878724
     assert er.res == [2020]
+
+def test_add_three_nums(er):
+    sum = er.add_three_nums()
+    assert type(sum) is list
+    assert er.res_two == [2020]

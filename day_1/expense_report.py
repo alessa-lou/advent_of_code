@@ -2,6 +2,7 @@ class ExpenseReport():
   
   def __init__(self):
     self.res = []
+    self.res_two = []
 
   def read_input(self):
     f = open("puzzle_input.txt", "r")
@@ -11,28 +12,26 @@ class ExpenseReport():
   
   def add_nums(self):
     file_content = self.read_input()
-    print("printing file_content")
-    print(file_content)
-    print(type(file_content))
     for i, val1 in enumerate(file_content):
       for j, val2 in enumerate(file_content[i+1:]):
         if val1 + val2 == 2020:
-          print(val1)
-          print(val2)
           self.res.append(val1 + val2)
-          print(self.res)
-          answer = val1 * val2
-          print(answer)
-          return answer
+          part_one_answer = val1 * val2
+          print(part_one_answer)
+          return part_one_answer
 
+  def add_three_nums(self):
+    file_content = self.read_input()
+    for i, val1 in enumerate(file_content):
+      for j, val2 in enumerate(file_content[i+1:]):
+        for val3 in file_content[i+j+1:]:
+          if val1 + val2 + val3 == 2020:
+            self.res_two.append(val1+val2+val3)
+            print(self.res_two)
+            part_two_answer = val1*val2*val3
+            print(part_two_answer)
+            return part_two_answer
+    
 
-
-    # for i in range(0, len(file_content), 2):
-    #   res.append(file_content[i] + file_content[i + 1])
-    #   counter+=1
-    # print("printing res")
-    # print(res)
-    # print(counter)
-    # return res
 
    
